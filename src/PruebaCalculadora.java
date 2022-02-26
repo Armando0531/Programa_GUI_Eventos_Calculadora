@@ -75,8 +75,8 @@ class Calculadora extends JFrame implements ActionListener{
 		areaTexto.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent ke) {
 				String value = areaTexto.getText();
-				int l = value.length();
-				if (ke.getKeyChar() >= '0' && ke.getKeyChar() <= '9') {
+				int code=ke.getKeyCode();
+				if ((ke.getKeyChar() >= '0' && ke.getKeyChar() <= '9')	||	(!value.contains(".")&&ke.getKeyChar()=='.') || (code==KeyEvent.VK_BACK_SPACE)) {
 					areaTexto.setEditable(true);
 				} else {
 					areaTexto.setEditable(false);
